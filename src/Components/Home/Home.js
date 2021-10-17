@@ -38,7 +38,8 @@ const Home = () => {
 
   return (
     <div className="container">
-      <div className=" row mb-5">{displayMovie} <ReactPaginate
+      <div className=" row mb-5">{displayMovie}
+       <ReactPaginate
       previousLabel={"prev"}
       nextLabel={"next"}
       pageCount={pageCount}
@@ -49,7 +50,9 @@ const Home = () => {
       disabledClassName={"paginationDisabled"}
       activeClassName={"paginationActive"}
 
-      ></ReactPaginate></div>
+      ></ReactPaginate>
+      <p>{moviePerPage} out of {movies.length}</p>
+      </div>
     </div>
   );
 };
