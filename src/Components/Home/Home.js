@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
 import Movies from "../Movies/Movies";
 import { Form, FormControl } from "react-bootstrap";
 import "./Home.css";
+import Pagination from '@mui/material/TablePagination';
 const Home = () => {
   const [movies, setMovies] = useState([]);
-  const [pageNumber, setPageNumber] = useState(0);
   const [searchMovie, setSearchMovie] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [page, setPage] =useState(0);
+  const [rowsPerPage, setRowsPerPage] =useState(6);
+  
   // pagination calculation
-  const moviePerPage = 10;
-  const pagesVisited = pageNumber * moviePerPage;
-  const pageCount = Math.ceil(movies.length / moviePerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
   };
-
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+ 
   // displaying the list, pagination, search
   const displayMovie = movies
-    .slice(pagesVisited, pagesVisited + moviePerPage)
+  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
     .filter((movie) => {
       if (searchTerm === "") {
         return movie;
@@ -65,7 +66,7 @@ const Home = () => {
   const handleOnChange = (e) => {
     setSearchMovie(e.target.value);
   };
-  
+
   return (
     <>
       <div
@@ -101,20 +102,18 @@ const Home = () => {
 
         <div className=" row mb-5">
           {displayMovie}
-          <ReactPaginate
-            previousLabel={"prev"}
-            nextLabel={"next"}
-            pageCount={pageCount}
-            onPageChange={changePage}
-            containerClassName={"paginationBttns"}
-            previousLinkClassName={"previousBttn"}
-            nextLinkClassName={"nextBttn"}
-            disabledClassName={"paginationDisabled"}
-            activeClassName={"paginationActive"}
-          ></ReactPaginate>
-          <p>
-            {pagesVisited + moviePerPage} out of {movies.length}
-          </p>
+          
+          <Pagination
+          rowsPerPageOptions={[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}
+          component="div"
+          count={movies.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          style={{color: 'white', padding:'10px'}}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+          
         </div>
       </div>
     </>

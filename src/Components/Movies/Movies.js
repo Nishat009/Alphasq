@@ -29,9 +29,10 @@ const Movies = ({
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        className="modal-view"
         style={{ cursor: "pointer" }}
       >
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title>Movie Name: {title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -45,7 +46,7 @@ const Movies = ({
           {vote_average} <br />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="danger" onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>
