@@ -1,31 +1,6 @@
 body {
   background-color: #072a469f;
 }
-
-.paginationBttns {
-  margin-top: 100px;
-  width: 80%;
-  height: 40px;
-  list-style: none;
-  display: flex;
-  justify-content: left;
-}
-.paginationBttns a {
-  padding: 10px;
-  margin: 8px;
-  border-radius: 5px;
-  border: 1px solid #032541;
-  color: #032541;
-  cursor: pointer;
-  text-decoration: none;
-}
-.paginationBttns a:hover {
-  color: white;
-  background-color: #032541;
-}
-a:hover {
-  color: white;
-}
 .search-button {
   margin: 20px 10px 20px 830px;
   width: 25%;

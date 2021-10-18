@@ -17,7 +17,7 @@ const Movies = ({
       <div onClick={handleShow} class="">
         <ul
           className=""
-          style={{ backgroundColor: "#032541", color: "#FFFFFF" }}
+          style={{ backgroundColor: "#032541", color: "#FFFFFF", listStyle: "none"}}
         >
           <li style={{ cursor: "pointer" }} className="card-title p-2">
             {title}
@@ -32,7 +32,7 @@ const Movies = ({
         className="modal-view"
         style={{ cursor: "pointer" }}
       >
-        <Modal.Header >
+        <Modal.Header>
           <Modal.Title>Movie Name: {title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
