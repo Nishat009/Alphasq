@@ -7,7 +7,6 @@ const Movies = ({
   vote_average,
   vote_count,
   release_date,
-  
 }) => {
   const [show, setShow] = useState(false);
 
@@ -16,9 +15,13 @@ const Movies = ({
   return (
     <div>
       <div onClick={handleShow} class="">
-        <ul className="" style={{ backgroundColor:"#032541", color:"#FFFFFF" }}>
-          <li  style={{cursor: "pointer"}} className="card-title p-2">{title}</li>
-          
+        <ul
+          className=""
+          style={{ backgroundColor: "#032541", color: "#FFFFFF" }}
+        >
+          <li style={{ cursor: "pointer" }} className="card-title p-2">
+            {title}
+          </li>
         </ul>
       </div>
       <Modal
@@ -26,13 +29,12 @@ const Movies = ({
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
-        style={{cursor: "pointer"}}
+        style={{ cursor: "pointer" }}
       >
         <Modal.Header closeButton>
           <Modal.Title>Movie Name: {title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-      
           <span style={{ fontWeight: "bold" }}>Short Overview of Movie:</span>{" "}
           {overview} <br />
           <span style={{ fontWeight: "bold" }}>Release Date</span>{" "}

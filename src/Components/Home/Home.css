@@ -1,48 +1,46 @@
-body{
-    background-color: #072a469f;
+body {
+  background-color: #072a469f;
 }
 
-.paginationBttns{
-    margin-top:100px;
-    width:80%;
-    height:40px;
-    list-style: none;
-    display: flex;
-    justify-content: left;
+.paginationBttns {
+  margin-top: 100px;
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: left;
 }
-.paginationBttns a{
-    padding:10px;
-    margin: 8px;
-    border-radius:5px;
-    border:1px solid #032541 ;
-    color:#032541;
-    cursor: pointer;
-    text-decoration:none;
-  
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #032541;
+  color: #032541;
+  cursor: pointer;
+  text-decoration: none;
 }
 .paginationBttns a:hover {
-    color:white;
-    background-color:#032541
+  color: white;
+  background-color: #032541;
 }
-a:hover{
-    color: white;
+a:hover {
+  color: white;
 }
-.search-button{
-   margin: 20px 10px 20px 830px;
-    width: 25%;
+.search-button {
+  margin: 20px 10px 20px 830px;
+  width: 25%;
 }
-.search{
-    margin: 0px;
+.search {
+  margin: 0px;
 }
-.server-search{
-    background-color:#032541;
-   
+.server-search {
+  background-color: #032541;
 }
-@media (max-width:1024px){
-    .search-button{
-        margin: auto;
-        margin-top:5px;
-        margin-bottom:5px;
-         width:100%;
-     }
+@media (max-width: 1024px) {
+  .search-button {
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
 }

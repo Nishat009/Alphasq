@@ -9,10 +9,16 @@ const Home = () => {
   const [searchMovie, setSearchMovie] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  const moviePerPage = 9;
-
+  // pagination calculation
+  const moviePerPage = 10;
   const pagesVisited = pageNumber * moviePerPage;
+  const pageCount = Math.ceil(movies.length / moviePerPage);
 
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
+  // displaying the list, pagination, search
   const displayMovie = movies
     .slice(pagesVisited, pagesVisited + moviePerPage)
     .filter((movie) => {
@@ -29,11 +35,8 @@ const Home = () => {
       </div>
     ));
 
-  const pageCount = Math.ceil(movies.length / moviePerPage);
+ 
 
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
 
   useEffect(() => {
     getMovies(
@@ -51,6 +54,7 @@ const Home = () => {
   const searchAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=4275cf25831de3b150d6ae572b31a179&query=";
 
+    // for server-side searching
   const handleSubmit = (e) => {
     e.preventDefault();
     if (searchMovie) {
@@ -61,6 +65,7 @@ const Home = () => {
   const handleOnChange = (e) => {
     setSearchMovie(e.target.value);
   };
+  
   return (
     <>
       <div
@@ -69,7 +74,6 @@ const Home = () => {
           padding: "10px 5px 10px 5px",
           backgroundColor: "#032541",
         }}
-        
       >
         <Form onSubmit={handleSubmit}>
           <FormControl
@@ -79,7 +83,6 @@ const Home = () => {
             aria-label="Search"
             value={searchMovie}
             onChange={handleOnChange}
-         
           />
         </Form>
       </div>
