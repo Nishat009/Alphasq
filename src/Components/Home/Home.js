@@ -7,7 +7,8 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
-  const moviePerPage = 10;
+
+  const moviePerPage = 5;
 
   const pagesVisited = pageNumber * moviePerPage;
 
@@ -70,7 +71,7 @@ const Home = () => {
           activeClassName={"paginationActive"}
         ></ReactPaginate>
         <p>
-          {moviePerPage} out of {movies.length}
+          {pagesVisited + moviePerPage} out of {movies.length}
         </p>
       </div>
     </div>
