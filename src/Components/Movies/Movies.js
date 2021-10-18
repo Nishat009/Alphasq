@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
 const Movies = ({
-  movie,
   title,
   overview,
   vote_average,
   vote_count,
   release_date,
+  
 }) => {
   const [show, setShow] = useState(false);
 
@@ -15,21 +15,24 @@ const Movies = ({
   const handleShow = () => setShow(true);
   return (
     <div>
-      <div onClick={handleShow} class="card card-design shadow-sm mb-2  mt-3">
-        <div className="card-body">
-          <h3 className="card-title p-2">{title}</h3>
-        </div>
+      <div onClick={handleShow} class="">
+        <ul className="" style={{ backgroundColor:"#032541", color:"#FFFFFF" }}>
+          <li  style={{cursor: "pointer"}} className="card-title p-2">{title}</li>
+          
+        </ul>
       </div>
       <Modal
         show={show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        style={{cursor: "pointer"}}
       >
         <Modal.Header closeButton>
           <Modal.Title>Movie Name: {title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+      
           <span style={{ fontWeight: "bold" }}>Short Overview of Movie:</span>{" "}
           {overview} <br />
           <span style={{ fontWeight: "bold" }}>Release Date</span>{" "}
