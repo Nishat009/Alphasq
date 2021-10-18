@@ -1,0 +1,21 @@
+body {
+  background-color: #072a469f;
+}
+.search-button {
+  margin: 20px 10px 20px 830px;
+  width: 25%;
+}
+.search {
+  margin: 0px;
+}
+.server-search {
+  background-color: #032541;
+}
+@media (max-width: 1024px) {
+  .search-button {
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+}
